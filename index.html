@@ -89,9 +89,9 @@
 
         <h2 class="text-x font-bold p-2">- トリ・リスト -</h2>
         <div class="grid grid-cols-2 gap-4">
-            <div v-for="(item, index) in birds"
+            <div v-on:click="item.markFavorite()" v-for="(item, index) in birds"
                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
-                <input v-on:click="item.markFavorite()" 　v-model="item.favorite" id="checkbox" type="checkbox"
+                <input v-model="item.favorite" id="checkbox" type="checkbox"
                        class="form-checkbox h-5 w-5 text-blue-600"/>
                 <span class="ml-2 text-white">{{item.name}}</span>
             </div>
