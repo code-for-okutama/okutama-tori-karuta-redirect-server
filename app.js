@@ -5,6 +5,10 @@ var app = new Vue({
         birds: Birds,
     },
     mounted: function() {
+        let type = getUrlQueries()['type'];
+        if (type == "dictionary") {
+            this.mode = "dictionary";
+        }
     },
     computed: {
         favoriteBirds() {
@@ -14,6 +18,14 @@ var app = new Vue({
     methods: {
         devMode() {
             this.mode = "dictionary";
+        },
+        stopSe() {
+            Howler.stop();
+        },
+        deselectAll() {
+            this.birds.forEach((bird) => {
+                bird.favorite = false;
+            });
         }
     }
 });

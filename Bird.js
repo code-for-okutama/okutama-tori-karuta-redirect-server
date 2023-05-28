@@ -35,7 +35,7 @@ var Birds =
         new Bird('higara', 'ヒガラ'),
         new Bird('akahara', 'アカハラ'),
         // 31-
-        new Bird('toratsugumi', 'トラツムギ'),
+        new Bird('toratsugumi', 'トラツグミ'),
         new Bird('aogera', 'アオゲラ'),
         new Bird('oakagera', 'オオアカゲラ'),
     ];

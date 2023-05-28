@@ -67,15 +67,24 @@
             </button>
         </div>
     </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div v-on:click="deselectAll()" class="m-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">
+                <span class="ml-2 text-white">全選択解除</span>
+            </div>
+            <div v-on:click="stopSe()" class="m-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded">
+                <span class="ml-2 text-white">音声停止</span>
+            </div>
+        </div>
 
-    <div v-show="mode=='dictionary'" class="container mx-auto p-4">
-
+        <h2 class="text-x font-bold p-2">- お気に入り・リスト- </h2>
+    <p class="text-sm p-4" v-show="favoriteBirds.length == 0">下の<b>「トリ・リスト」</b>から聞きたい鳴き声の鳥にチェックを入れてください。<b>「お気に入り・リスト」</b>で選択した鳥をタッチすると鳴き声が再生されます。</p>
         <div v-for="(item, index) in favoriteBirds"
              class="my-3 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
              v-on:click="item.pick()">
             <span class="ml-2 text-gray-700">{{item.name}}</span>
         </div>
 
+        <h2 class="text-x font-bold p-2">- トリ・リスト -</h2>
         <div class="grid grid-cols-2 gap-4">
             <div v-for="(item, index) in birds"
                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
