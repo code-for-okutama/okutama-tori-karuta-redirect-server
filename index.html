@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <main id="app">
     <div v-show="mode=='main'">
         <iframe id="video" class="w-full" src="https://www.youtube.com/embed/9eoCId96A94" allowfullscreen></iframe>
@@ -50,7 +49,6 @@
             </div>
 
             <h2 class="text-xl font-bold mb-2">SNS</h2>
-            <p class="text-sm mb-4">イベントの情報はこちら!</p>
             <div class="flex items-center">
                 <a href="https://twitter.com/torikaruta/" target="_blank" rel="nofollow"
                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
@@ -61,9 +59,10 @@
                     <i class="fab fa-instagram mr-2"></i> Instagram
                 </a>
             </div>
-            <h2 class="text-xl font-bold mb-2">DEV</h2>
-            <button v-on:click="devMode()">
-                [Dev]Bird List
+            <h2 class="text-xl font-bold mb-2 mt-4">便利ツール</h2>
+            <button v-on:click="setMode('dictionary')"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                音声プレイヤー
             </button>
         </div>
     </div>
@@ -96,6 +95,11 @@
                 <span class="ml-2 text-white">{{item.name}}</span>
             </div>
         </div>
+
+        <button v-on:click="setMode('main')"
+                class="bg-gray-500 hover:bg-gray-700 text-white w-full font-bold py-4 px-4 mt-6">
+            このツールを閉じる
+        </button>
     </div>
 </main>
 

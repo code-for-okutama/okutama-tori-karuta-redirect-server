@@ -14,6 +14,7 @@ function playSe(fileName, volume = 1.0) {
 
         new Howl({
             src: ["audios/" + fileName + ".mp3"],
+            loop: true,
             volume: volume,
             onend: function () {
                 resolve();

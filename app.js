@@ -16,8 +16,8 @@ var app = new Vue({
         },
     },
     methods: {
-        devMode() {
-            this.mode = "dictionary";
+        setMode(mode) {
+            this.mode = mode;
         },
         stopSe() {
             Howler.stop();
