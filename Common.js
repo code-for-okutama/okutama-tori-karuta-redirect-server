@@ -6,7 +6,7 @@ function waitSec(sec) {
     })
 }
 
-function playSe(fileName, volume = 1.0) {
+function playSe(fileName, volume = 1.0, loop = true) {
     return new Promise(resolve => {
 
         // 前のSEを止める
@@ -14,7 +14,7 @@ function playSe(fileName, volume = 1.0) {
 
         new Howl({
             src: ["audios/" + fileName + ".mp3"],
-            loop: true,
+            loop: loop,
             volume: volume,
             onend: function () {
                 resolve();

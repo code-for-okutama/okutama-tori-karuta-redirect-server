@@ -46,6 +46,9 @@
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     <a href='https://code-for-okutama.github.io/okutama-tori-karuta/?type=mtke'>御岳山</a>
                 </button>
+                <button class="bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <a href='https://code-for-okutama.github.io/okutama-tori-karuta/'>全種類MIX</a>
+                </button>
             </div>
 
             <h2 class="text-xl font-bold mb-2">SNS</h2>
@@ -63,6 +66,10 @@
             <button v-on:click="setMode('dictionary')"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 音声プレイヤー
+            </button>
+            <button v-on:click="setMode('bgm')"
+                    class="bg-black hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                BGMモード
             </button>
         </div>
     </div>
@@ -96,6 +103,13 @@
             </div>
         </div>
 
+        <button v-on:click="setMode('main')"
+                class="bg-gray-500 hover:bg-gray-700 text-white w-full font-bold py-4 px-4 mt-6">
+            このツールを閉じる
+        </button>
+    </div>
+    <div v-show="mode=='bgm'" class="bg-black h-screen">
+        <h2 class="text-x font-bold p-2 text-white">BGMモード</h2>
         <button v-on:click="setMode('main')"
                 class="bg-gray-500 hover:bg-gray-700 text-white w-full font-bold py-4 px-4 mt-6">
             このツールを閉じる
